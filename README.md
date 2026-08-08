@@ -6,6 +6,10 @@ Personal portfolio website of **Jannatul Maowa Ariba**, a Computer Science & Eng
 
 https://j-m-ariba-gzip0r4wn-jannatul-maowa-ariba.vercel.app/
 
+#or
+
+https://j-m-ariba.vercel.app/
+
 ## GitHub Repository
 
 https://github.com/ariba0904/J_M_Ariba

@@ -39,7 +39,7 @@ const projects = [
     title: "Hotel Management System",
     image: hotel,
     description:
-      "Java-based desktop application for hotel management.",
+      "C++ based desktop application for hotel management.",
     tech: ["C++", "Codeblocks", "VS Code"],
     github: "https://github.com/ariba0904/Hotel-Management-System",
     live: "https://ariba0904.github.io/Hotel-Management-System/",

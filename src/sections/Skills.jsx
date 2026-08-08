@@ -17,6 +17,7 @@ function Skills() {
       skills: [
         "Git",
         "GitHub",
+        "Vercel",
         "VS Code",
         "Codeblocks",
         "Apache NetBeans",

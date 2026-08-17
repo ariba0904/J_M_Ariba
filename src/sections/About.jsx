@@ -64,8 +64,9 @@ function About() {
             <p className="text-zinc-400 leading-8 mb-6">
               I am a Computer Science & Engineering student at
               International Islamic University Chittagong (IIUC)
-              with a strong passion for research, software development,
-              UI/UX design, and modern web technologies.
+              with a strong passion for rsearch, machine learning, data analysis, 
+              robotics, software development, UI/UX design, modern web technologies, 
+              problem solving and programming. 
             </p>
 
             <p className="text-zinc-400 leading-8 mb-10">

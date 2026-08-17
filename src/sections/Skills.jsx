@@ -6,7 +6,7 @@ function Skills() {
     },
     {
       title: "Backend",
-      skills: ["PHP", "MySQL"],
+      skills: ["PHP", "MySQL", "Oracel"],
     },
     {
       title: "Programming",

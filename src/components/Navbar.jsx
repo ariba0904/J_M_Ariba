@@ -9,6 +9,7 @@ function Navbar() {
     "About",
     "Skills",
     "Projects",
+    "Certificates",
     "Contact",
   ];
 

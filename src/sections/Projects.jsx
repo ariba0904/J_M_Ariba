@@ -1,193 +1,199 @@
 import projects from "../data/projects";
+import { FaArrowRight, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 function Projects() {
   return (
-    <section id="projects">
-      <div>
-
-        <p className="uppercase tracking-[8px] text-violet-400 font-medium">
-          Projects
-        </p>
-
-        <h2
-          className="text-5xl md:text-6xl font-bold"
+    <section
+      id="projects"
+      className="section"
+      style={{ scrollMarginTop: 72, background: "var(--bg-elevated)" }}
+    >
+      <div className="container">
+        <div
           style={{
-            marginTop: "16px",
-            marginBottom: "50px",
-            lineHeight: "1.1",
+            display: "flex",
+            flexWrap: "wrap",
+            alignItems: "flex-end",
+            justifyContent: "space-between",
+            gap: 16,
+            marginBottom: 32,
           }}
         >
-          Featured Projects
-        </h2>
+          <div>
+            <span className="section-label">Selected Work</span>
+            <h2 className="section-title" style={{ marginBottom: 0 }}>
+              Featured Projects
+            </h2>
+          </div>
+          <a
+            href="https://github.com/ariba0904"
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-outline"
+            style={{ height: 38, fontSize: 12 }}
+          >
+            View All Projects <FaArrowRight size={11} />
+          </a>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-
-          {projects.map((project) => (
-
-            <div
+        {/* 5 projects side by side on large screens */}
+        <div
+          className="projects-grid"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr",
+            gap: 14,
+          }}
+        >
+          {projects.map((project, i) => (
+            <motion.article
               key={project.title}
-              className="
-                group
-                rounded-3xl
-                overflow-hidden
-                bg-gradient-to-br
-                from-[#17111F]
-                to-[#0C0A10]
-                border
-                border-violet-500/20
-                hover:border-violet-500
-                transition
-                duration-500
-                hover:-translate-y-2
-                shadow-[0_0_30px_rgba(168,85,247,.12)]
-                hover:shadow-[0_0_55px_rgba(168,85,247,.35)]
-              "
+              className="card"
+              style={{ overflow: "hidden", display: "flex", flexDirection: "column" }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.06 }}
+              whileHover={{ y: -4 }}
             >
-
-              {/* PROJECT IMAGE */}
-
-              <div className="h-56 overflow-hidden">
-
+              <div style={{ height: 130, overflow: "hidden", background: "var(--bg)" }}>
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="
-                    w-full
-                    h-full
-                    object-cover
-                    group-hover:scale-105
-                    transition-all
-                    duration-500
-                  "
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
-
               </div>
-
-
-              {/* PROJECT CONTENT */}
-
               <div
                 style={{
-                  padding: "28px",
+                  padding: "14px",
+                  flex: 1,
+                  display: "flex",
+                  flexDirection: "column",
                 }}
               >
-
-                {/* TITLE */}
-
                 <h3
-                  className="text-2xl font-bold"
                   style={{
-                    marginBottom: "18px",
-                    lineHeight: "1.3",
+                    fontSize: 13,
+                    fontWeight: 700,
+                    marginBottom: 6,
+                    color: "var(--text)",
+                    lineHeight: 1.35,
                   }}
                 >
                   {project.title}
                 </h3>
-
-
-                {/* DESCRIPTION */}
-
                 <p
-                  className="text-gray-400 leading-8"
                   style={{
-                    marginBottom: "22px",
+                    fontSize: 11,
+                    color: "var(--text-muted)",
+                    lineHeight: 1.5,
+                    marginBottom: 10,
+                    flex: 1,
                   }}
                 >
                   {project.description}
                 </p>
-
-
-                {/* TECHNOLOGIES */}
-
                 <div
-                  className="flex flex-wrap"
                   style={{
-                    gap: "12px",
-                    marginBottom: "24px",
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: 4,
+                    marginBottom: 10,
                   }}
                 >
-
-                  {project.tech.map((tech) => (
-
+                  {project.tech.slice(0, 3).map((t) => (
                     <span
-                      key={tech}
-                      className="
-                        rounded-full
-                        bg-violet-500/10
-                        border
-                        border-violet-500/30
-                        text-violet-200
-                      "
-                      style={{
-                        padding: "7px 14px",
-                        lineHeight: "1.4",
-                      }}
+                      key={t}
+                      className="tag"
+                      style={{ fontSize: 10, padding: "3px 8px" }}
                     >
-                      {tech}
+                      {t}
                     </span>
-
                   ))}
-
                 </div>
-
-
-                {/* BUTTONS */}
-
-                <div
-                  className="flex flex-wrap"
-                  style={{
-                    gap: "14px",
-                  }}
-                >
-
+                <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
                   <a
                     href={project.github}
-                    className="
-                      rounded-xl
-                      border
-                      border-violet-500
-                      hover:bg-violet-500
-                      transition
-                      flex
-                      items-center
-                      justify-center
-                    "
-                    style={{
-                      padding: "9px 20px",
-                    }}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn btn-outline"
+                    style={{ height: 30, fontSize: 11, padding: "0 10px" }}
                   >
-                    GitHub
+                    <FaGithub size={11} />
                   </a>
-
                   <a
                     href={project.live}
-                    className="
-                      rounded-xl
-                      bg-violet-600
-                      hover:bg-violet-500
-                      transition
-                      flex
-                      items-center
-                      justify-center
-                    "
-                    style={{
-                      padding: "9px 20px",
-                    }}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn btn-primary"
+                    style={{ height: 30, fontSize: 11, padding: "0 10px" }}
                   >
-                    Live Demo
+                    <FaExternalLinkAlt size={10} />
                   </a>
-
                 </div>
-
               </div>
-
-            </div>
-
+            </motion.article>
           ))}
-
         </div>
 
+        <div
+          className="stats-grid"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
+            gap: 12,
+            marginTop: 40,
+          }}
+        >
+          {[
+            { n: "5+", l: "Projects Completed" },
+            { n: "10+", l: "Technologies" },
+            { n: "2+", l: "Years Learning" },
+            { n: "100%", l: "Dedication" },
+          ].map((s) => (
+            <div
+              key={s.l}
+              className="card"
+              style={{ padding: "20px 16px", textAlign: "center" }}
+            >
+              <div
+                style={{
+                  fontSize: "1.6rem",
+                  fontWeight: 700,
+                  color: "var(--accent-bright)",
+                  lineHeight: 1,
+                }}
+              >
+                {s.n}
+              </div>
+              <div
+                style={{
+                  fontSize: 12,
+                  fontWeight: 600,
+                  color: "var(--text-muted)",
+                  marginTop: 6,
+                }}
+              >
+                {s.l}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
+
+      <style>{`
+        @media (min-width: 640px) {
+          .projects-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .stats-grid { grid-template-columns: repeat(4, 1fr) !important; }
+        }
+        @media (min-width: 900px) {
+          .projects-grid { grid-template-columns: repeat(3, 1fr) !important; }
+        }
+        @media (min-width: 1100px) {
+          .projects-grid { grid-template-columns: repeat(5, 1fr) !important; }
+        }
+      `}</style>
     </section>
   );
 }

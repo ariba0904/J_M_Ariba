@@ -1,212 +1,212 @@
+import { useState } from "react";
+import { MdWork } from "react-icons/md";
+import {
+  FaRocket,
+  FaRobot,
+  FaChartBar,
+  FaGlobe,
+  FaStar,
+} from "react-icons/fa";
+import { motion } from "framer-motion";
 import aboutImage from "../assets/images/about.png";
 
+const keywords = [
+  { icon: FaGlobe, label: "Web Development" },
+  { icon: FaChartBar, label: "Data Analysis" },
+  { icon: FaRobot, label: "Robotics" },
+  { icon: FaRocket, label: "Space & Astronomy" },
+  { icon: FaStar, label: "Research Mindset" },
+  { icon: MdWork, label: "UI / UX Design" },
+];
+
 function About() {
+  const [hovered, setHovered] = useState(null);
+
   return (
     <section
       id="about"
-      className="py-32 scroll-mt-24"
+      className="section"
+      style={{ scrollMarginTop: 72, background: "var(--bg-elevated)" }}
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="container">
+        <div style={{ marginBottom: 28 }}>
+          <span className="section-label">About Me</span>
+          <h2 className="section-title" style={{ marginBottom: 0 }}>
+            Curious mind. Builder. Explorer of code & cosmos.
+          </h2>
+        </div>
 
-        <p className="uppercase tracking-[8px] text-violet-400 mb-4">
-          About Me
-        </p>
-
-        <h2 className="text-5xl md:text-6xl font-bold mb-12">
-          Get to Know Me
-        </h2>
-
-        <div className="grid lg:grid-cols-2 gap-14 items-center">
-
-          {/* LEFT */}
-
-          <div
-            className="
-              h-[580px]
-              bg-white/5
-              backdrop-blur-xl
-              border
-              border-violet-500/20
-              rounded-3xl
-              shadow-[0_0_35px_rgba(168,85,247,.15)]
-              hover:shadow-[0_0_60px_rgba(168,85,247,.35)]
-              transition-all
-              duration-500
-              overflow-hidden
-              flex
-              items-center
-              justify-center
-              p-6
-            "
+        <div
+          className="about-layout"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr",
+            gap: "28px",
+            alignItems: "stretch",
+          }}
+        >
+          {/* LEFT — photo */}
+          <motion.div
+            className="card"
+            initial={{ opacity: 0, x: -16 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            style={{
+              overflow: "hidden",
+              padding: 0,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background: "var(--bg-card)",
+              minHeight: 320,
+            }}
           >
             <img
               src={aboutImage}
-              alt="About Ariba"
-              className="
-                w-full
-                h-full
-                object-contain
-                transition-all
-                duration-500
-                hover:scale-105
-              "
+              alt="Jannatul Maowa Ariba"
+              style={{
+                width: "100%",
+                height: "100%",
+                maxHeight: 480,
+                objectFit: "contain",
+                objectPosition: "center",
+                display: "block",
+              }}
             />
-          </div>
+          </motion.div>
 
-          {/* RIGHT */}
-
-          <div>
-
-            <h3 className="text-3xl font-bold mb-6">
-              Hi, I'm <span className="text-violet-400">Ariba</span>
-            </h3>
-
-            <p className="text-zinc-400 leading-8 mb-6">
-              I am a Computer Science & Engineering student at
-              International Islamic University Chittagong (IIUC)
-              with a strong passion for rsearch, machine learning, data analysis, 
-              robotics, software development, UI/UX design, modern web technologies, 
-              problem solving and programming. 
-            </p>
-
-            <p className="text-zinc-400 leading-8 mb-10">
-              I enjoy building responsive web applications,
-              solving real-world problems, and continuously
-              learning new technologies. Recently, I developed
-              a Disaster Relief & Resource Management System
-              using PHP, MySQL, HTML, CSS & JavaScript. I also built
-              desktop applications including an Airline
-              Reservation System, Hotel Management System,
-              and Library Management System.
-            </p>
-
-            {/* STATS */}
-
-            <div className="grid grid-cols-2 gap-8 mt-12">
-
-              {/* Technologies */}
-
-              <div
-                className="
-                  min-h-[120px]
-                  bg-white/5
-                  border
-                  border-violet-500/20
-                  rounded-2xl
-                  p-6
-                  flex
-                  flex-col
-                  items-center
-                  justify-center
-                  text-center
-                  hover:border-violet-400
-                  transition-all
-                  duration-300
-                "
+          {/* RIGHT — text + keywords only */}
+          <motion.div
+            initial={{ opacity: 0, x: 16 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.05 }}
+            style={{ display: "flex", flexDirection: "column", gap: 18 }}
+          >
+            <div>
+              <p
+                style={{
+                  fontSize: 14,
+                  lineHeight: 1.7,
+                  color: "var(--text-muted)",
+                  marginBottom: 12,
+                }}
               >
-                <h4 className="text-4xl font-bold text-violet-400 leading-none">
-                  10+
-                </h4>
-
-                <p className="text-zinc-400 mt-4">
-                  Technologies
-                </p>
-              </div>
-
-              {/* Projects */}
-
-              <div
-                className="
-                  min-h-[120px]
-                  bg-white/5
-                  border
-                  border-violet-500/20
-                  rounded-2xl
-                  p-6
-                  flex
-                  flex-col
-                  items-center
-                  justify-center
-                  text-center
-                  hover:border-violet-400
-                  transition-all
-                  duration-300
-                "
+                <strong style={{ color: "var(--text)" }}>CSE student at IIUC</strong> focused on
+                turning ideas into working products — from responsive web apps to systems that
+                solve real problems.
+              </p>
+              <p
+                style={{
+                  fontSize: 14,
+                  lineHeight: 1.7,
+                  color: "var(--text-muted)",
+                  marginBottom: 0,
+                }}
               >
-                <h4 className="text-4xl font-bold text-violet-400 leading-none">
-                  5+
-                </h4>
-
-                <p className="text-zinc-400 mt-4">
-                  Projects
-                </p>
-              </div>
-
-              {/* Years Learning */}
-
-              <div
-                className="
-                  min-h-[120px]
-                  bg-white/5
-                  border
-                  border-violet-500/20
-                  rounded-2xl
-                  p-6
-                  flex
-                  flex-col
-                  items-center
-                  justify-center
-                  text-center
-                  hover:border-violet-400
-                  transition-all
-                  duration-300
-                "
-              >
-                <h4 className="text-4xl font-bold text-violet-400 leading-none">
-                  2+
-                </h4>
-
-                <p className="text-zinc-400 mt-4">
-                  Years Learning
-                </p>
-              </div>
-
-              {/* Passion */}
-
-              <div
-                className="
-                  min-h-[120px]
-                  bg-white/5
-                  border
-                  border-violet-500/20
-                  rounded-2xl
-                  p-6
-                  flex
-                  flex-col
-                  items-center
-                  justify-center
-                  text-center
-                  hover:border-violet-400
-                  transition-all
-                  duration-300
-                "
-              >
-                <h4 className="text-4xl font-bold text-violet-400 leading-none">
-                  ∞
-                </h4>
-
-                <p className="text-zinc-400 mt-4">
-                  Passion
-                </p>
-              </div>
-
+                Beyond code, I explore{" "}
+                <strong style={{ color: "var(--text)" }}>space, the universe & astronomy</strong>,
+                experiment with <strong style={{ color: "var(--text)" }}>robotics</strong>, and dig
+                into <strong style={{ color: "var(--text)" }}>data analysis</strong> to understand
+                patterns and build smarter solutions.
+              </p>
             </div>
 
-          </div>
+            <div
+              className="card"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 14,
+                padding: "14px 16px",
+                borderColor: "var(--border-accent)",
+              }}
+            >
+              <div
+                style={{
+                  fontSize: "1.7rem",
+                  fontWeight: 700,
+                  color: "var(--accent-bright)",
+                  lineHeight: 1,
+                }}
+              >
+                2+
+              </div>
+              <div>
+                <div style={{ fontSize: 13, fontWeight: 700, color: "var(--text)" }}>
+                  Years Learning
+                </div>
+                <div style={{ fontSize: 11, color: "var(--text-muted)", marginTop: 2 }}>
+                  Continuous growth in code, research & tech
+                </div>
+              </div>
+            </div>
 
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+                gap: 10,
+              }}
+            >
+              {keywords.map((k) => {
+                const Icon = k.icon;
+                return (
+                  <div
+                    key={k.label}
+                    className="card"
+                    onMouseEnter={() => setHovered(k.label)}
+                    onMouseLeave={() => setHovered(null)}
+                    style={{
+                      padding: "11px 12px",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 10,
+                      borderColor:
+                        hovered === k.label
+                          ? "var(--border-accent)"
+                          : "var(--border)",
+                      boxShadow:
+                        hovered === k.label ? "0 6px 18px var(--glow)" : "none",
+                      transition: "border-color 0.2s, box-shadow 0.2s",
+                    }}
+                  >
+                    <span
+                      style={{
+                        width: 30,
+                        height: 30,
+                        borderRadius: 8,
+                        background: "rgba(109,60,82,0.22)",
+                        color: "var(--accent-bright)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        flexShrink: 0,
+                      }}
+                    >
+                      <Icon size={13} />
+                    </span>
+                    <span style={{ fontSize: 12, fontWeight: 600, color: "var(--text)" }}>
+                      {k.label}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          </motion.div>
         </div>
-
       </div>
+
+      <style>{`
+        @media (min-width: 900px) {
+          .about-layout {
+            grid-template-columns: minmax(280px, 0.95fr) 1.15fr !important;
+            gap: 36px !important;
+            align-items: start !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

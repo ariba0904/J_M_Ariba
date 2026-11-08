@@ -5,17 +5,22 @@ import Skills from "./sections/Skills";
 import Projects from "./sections/Projects";
 import Certificates from "./sections/Certificates";
 import Contact from "./sections/Contact";
+import Footer from "./components/Footer";
+
 function App() {
   return (
-    <>
+    <div style={{ minHeight: "100vh", overflowX: "hidden" }}>
       <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Certificates />
-      <Contact />
-    </>
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Certificates />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
   );
 }
 

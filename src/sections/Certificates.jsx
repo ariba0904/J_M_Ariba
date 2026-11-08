@@ -1,132 +1,176 @@
+import { useState } from "react";
 import certificates from "../data/certificates";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Certificates() {
+  const [active, setActive] = useState(null);
+
   return (
-    <section id="certificates" className="py-32">
-
-      <div className="max-w-7xl mx-auto px-6">
-
-        {/* SECTION TITLE */}
-
-        <p className="uppercase tracking-[8px] text-violet-400 font-medium">
-          Achievements & Certificates
-        </p>
-
-        <h2
-          className="text-5xl md:text-6xl font-bold"
+    <section id="certificates" className="section" style={{ scrollMarginTop: 72 }}>
+      <div className="container">
+        <div
           style={{
-            marginTop: "16px",
-            marginBottom: "25px",
-            lineHeight: "1.1",
+            display: "flex",
+            flexWrap: "wrap",
+            alignItems: "flex-end",
+            justifyContent: "space-between",
+            gap: 16,
+            marginBottom: 32,
           }}
         >
-          My Certificates
-        </h2>
+          <div>
+            <span className="section-label">Achievements</span>
+            <h2 className="section-title" style={{ marginBottom: 0 }}>
+              Certificates
+            </h2>
+          </div>
+          <p
+            style={{
+              fontSize: 13,
+              color: "var(--text-muted)",
+              maxWidth: 320,
+              margin: 0,
+            }}
+          >
+            Academic events, competitions, and learning experiences.
+          </p>
+        </div>
 
-        <p
-          className="text-zinc-400 max-w-2xl leading-8"
+        <div
+          className="cert-grid"
           style={{
-            marginBottom: "40px",
+            display: "grid",
+            gridTemplateColumns: "1fr",
+            gap: 14,
           }}
         >
-          A collection of certificates and achievements from
-          academic events, competitions, and learning experiences.
-        </p>
-
-
-        {/* CERTIFICATES */}
-
-        <div className="grid md:grid-cols-2 gap-8">
-
-          {certificates.map((certificate) => (
-
-            <div
-              key={certificate.title}
-              className="
-                group
-                rounded-3xl
-                overflow-hidden
-                bg-gradient-to-br
-                from-[#17111F]
-                to-[#0C0A10]
-                border
-                border-violet-500/20
-                hover:border-violet-500
-                transition-all
-                duration-500
-                hover:-translate-y-2
-                shadow-[0_0_30px_rgba(168,85,247,.12)]
-                hover:shadow-[0_0_55px_rgba(168,85,247,.35)]
-              "
+          {certificates.map((c, i) => (
+            <motion.article
+              key={`${c.title}-${c.year}-${i}`}
+              className="card"
+              style={{
+                overflow: "hidden",
+                display: "flex",
+                flexDirection: "column",
+                cursor: "pointer",
+                borderColor:
+                  active === i ? "var(--border-accent)" : "var(--border)",
+                boxShadow: active === i ? "0 10px 28px var(--glow)" : "none",
+              }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.07 }}
+              whileHover={{ y: -5 }}
+              onMouseEnter={() => setActive(i)}
+              onMouseLeave={() => setActive(null)}
+              onClick={() => setActive((prev) => (prev === i ? null : i))}
             >
-
-              {/* CERTIFICATE IMAGE */}
-
-              <div className="h-72 overflow-hidden bg-black/20">
-
+              {/* Same image treatment as Featured Projects */}
+              <div
+                style={{
+                  height: 130,
+                  overflow: "hidden",
+                  background: "var(--bg)",
+                }}
+              >
                 <img
-                  src={certificate.image}
-                  alt={certificate.title}
-                  className="
-                    w-full
-                    h-full
-                    object-contain
-                    p-4
-                    group-hover:scale-105
-                    transition-all
-                    duration-500
-                  "
+                  src={c.image}
+                  alt={c.title}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
                 />
-
               </div>
-
-
-              {/* CONTENT */}
 
               <div
                 style={{
-                  padding: "28px",
+                  padding: "14px",
+                  flex: 1,
+                  display: "flex",
+                  flexDirection: "column",
                 }}
               >
-
-                <p className="text-violet-400 text-sm font-medium mb-3">
-                  {certificate.year}
-                </p>
-
+                <span
+                  className="tag"
+                  style={{
+                    fontSize: 10,
+                    padding: "3px 8px",
+                    alignSelf: "flex-start",
+                    marginBottom: 8,
+                  }}
+                >
+                  {c.year}
+                </span>
                 <h3
-                  className="text-2xl font-bold"
                   style={{
-                    marginBottom: "14px",
-                    lineHeight: "1.3",
+                    fontSize: 13,
+                    fontWeight: 700,
+                    marginBottom: 6,
+                    color: "var(--text)",
+                    lineHeight: 1.35,
                   }}
                 >
-                  {certificate.title}
+                  {c.title}
                 </h3>
-
                 <p
-                  className="text-white text-lg"
                   style={{
-                    marginBottom: "10px",
-                    lineHeight: "1.5",
+                    fontSize: 11,
+                    color: "var(--text-muted)",
+                    lineHeight: 1.5,
+                    marginBottom: 6,
+                    flex: 1,
                   }}
                 >
-                  {certificate.event}
+                  {c.event}
+                </p>
+                <p
+                  style={{
+                    fontSize: 11,
+                    fontWeight: 600,
+                    color: "var(--text-dim)",
+                    lineHeight: 1.4,
+                  }}
+                >
+                  {c.organization}
                 </p>
 
-                <p className="text-zinc-400 leading-7">
-                  {certificate.organization}
-                </p>
-
+                <AnimatePresence>
+                  {active === i && (
+                    <motion.p
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      style={{
+                        fontSize: 11,
+                        color: "var(--accent-bright)",
+                        marginTop: 10,
+                        fontWeight: 600,
+                      }}
+                    >
+                      Verified achievement · {c.year}
+                    </motion.p>
+                  )}
+                </AnimatePresence>
               </div>
-
-            </div>
-
+            </motion.article>
           ))}
-
         </div>
-
       </div>
 
+      <style>{`
+        @media (min-width: 640px) {
+          .cert-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (min-width: 900px) {
+          .cert-grid { grid-template-columns: repeat(3, 1fr) !important; }
+        }
+        @media (min-width: 1100px) {
+          .cert-grid { grid-template-columns: repeat(3, 1fr) !important; }
+        }
+      `}</style>
     </section>
   );
 }

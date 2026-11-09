@@ -8,7 +8,7 @@ const focusTags = [
   "Data Analysis",
   "Robotics",
   "Space & Astronomy",
-  "Universe Enthusiast",
+  "Researcher",
 ];
 
 function Hero() {
@@ -104,13 +104,10 @@ function Hero() {
                 marginBottom: "14px",
               }}
             >
-              Building for the web while exploring{" "}
+              Transforming ideas into engineering & practical solutions through{" "}
               <strong style={{ color: "var(--text)", fontWeight: 600 }}>
-                space, the universe & astronomy
+                research, code, creativity and technology.
               </strong>
-              ,{" "}
-              <strong style={{ color: "var(--text)", fontWeight: 600 }}>robotics</strong>, and{" "}
-              <strong style={{ color: "var(--text)", fontWeight: 600 }}>data analysis</strong>.
             </p>
 
             <div

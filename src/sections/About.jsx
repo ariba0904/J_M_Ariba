@@ -32,7 +32,7 @@ function About() {
         <div style={{ marginBottom: 28 }}>
           <span className="section-label">About Me</span>
           <h2 className="section-title" style={{ marginBottom: 0 }}>
-            Curious mind. Builder. Explorer of code & cosmos.
+             Space & Astronomy Enthusiast. Researcher. Web Developer
           </h2>
         </div>
 
@@ -90,26 +90,15 @@ function About() {
                   fontSize: 14,
                   lineHeight: 1.7,
                   color: "var(--text-muted)",
-                  marginBottom: 12,
-                }}
-              >
-                <strong style={{ color: "var(--text)" }}>CSE student at IIUC</strong> focused on
-                turning ideas into working products — from responsive web apps to systems that
-                solve real problems.
-              </p>
-              <p
-                style={{
-                  fontSize: 14,
-                  lineHeight: 1.7,
-                  color: "var(--text-muted)",
                   marginBottom: 0,
                 }}
               >
-                Beyond code, I explore{" "}
-                <strong style={{ color: "var(--text)" }}>space, the universe & astronomy</strong>,
-                experiment with <strong style={{ color: "var(--text)" }}>robotics</strong>, and dig
-                into <strong style={{ color: "var(--text)" }}>data analysis</strong> to understand
-                patterns and build smarter solutions.
+                <strong style={{ color: "var(--text)" }}>CSE student at IIUC</strong>{" "}
+                passionate about research, software development, and web technologies. I enjoy
+                building projects and solving real-world problems through technology. Beyond
+                coding, I have a strong interest in space, astronomy, machine learning, data
+                analysis, and robotics, and I am continuously exploring these fields to expand
+                my knowledge and skills.
               </p>
             </div>
 
@@ -138,7 +127,7 @@ function About() {
                   Years Learning
                 </div>
                 <div style={{ fontSize: 11, color: "var(--text-muted)", marginTop: 2 }}>
-                  Continuous growth in code, research & tech
+                  Continuous growth in learning, research & tech
                 </div>
               </div>
             </div>

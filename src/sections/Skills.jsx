@@ -6,6 +6,7 @@ import {
   FaJs,
   FaReact,
   FaJava,
+  FaPython,
   FaPhp,
   FaGitAlt,
   FaNodeJs,
@@ -37,7 +38,7 @@ const groups = [
     title: "Programming",
     desc: "Core languages and structured problem solving.",
     icon: FaLaptopCode,
-    skills: ["C", "C++", "Java"],
+    skills: ["C", "C++", "Java", "Python"],
   },
   {
     title: "Tools & Design",
@@ -46,10 +47,10 @@ const groups = [
     skills: ["Git", "GitHub", "VS Code", "Figma", "Canva", "XAMPP"],
   },
   {
-    title: "Currently Learning",
-    desc: "Modern backend and motion for richer web experiences.",
+    title: "Growing Skills In",
+    desc: "Modern backend, Framer motion & 3D animation for richer web experiences.",
     icon: FaLightbulb,
-    skills: ["Node.js", "Express.js", "Framer Motion"],
+    skills: ["Node.js", "Express.js", "Three.js", "Tween.js", "Anime.js"],
   },
   {
     title: "Soft Skills",
@@ -68,6 +69,7 @@ const techIcons = [
   { name: "PHP", Icon: FaPhp, color: "#777BB4" },
   { name: "MySQL", Icon: SiMysql, color: "#4479A1" },
   { name: "Java", Icon: FaJava, color: "#ED8B00" },
+  { name: "Python", Icon: FaPython, color: "#3776AB" },
   { name: "C++", Icon: SiCplusplus, color: "#00599C" },
   { name: "Git", Icon: FaGitAlt, color: "#F05032" },
   { name: "GitHub", Icon: FaGithub, color: "#fadcd5" },

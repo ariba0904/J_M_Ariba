@@ -147,7 +147,7 @@ function Projects() {
           }}
         >
           {[
-            { n: "5+", l: "Projects Completed" },
+            { n: "6+", l: "Projects Completed" },
             { n: "10+", l: "Technologies" },
             { n: "2+", l: "Years Learning" },
             { n: "100%", l: "Dedication" },

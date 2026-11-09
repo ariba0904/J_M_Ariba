@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { MdEmail, MdLocationOn } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
-import SocialIcons from "../components/SocialIcons";
 
 function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -67,7 +66,7 @@ function Contact() {
             <span className="section-label">Get In Touch</span>
             <h2 className="section-title">Let's work together</h2>
             <p className="section-desc" style={{ marginBottom: 24 }}>
-              Have an idea, internship opportunity, collaboration, or just want to say hello?
+              Have an idea, internship opportunity, collaboration or work?
               I'd love to hear from you.
             </p>
 
@@ -149,13 +148,12 @@ function Contact() {
                 <div>
                   <div style={{ fontSize: 11, fontWeight: 600, color: "var(--text-dim)" }}>Location</div>
                   <div style={{ fontSize: 13, fontWeight: 600, color: "var(--text)" }}>
-                    DC Road, Chawkbazar, Chattogram
+                  Chattogram, Bangladesh
                   </div>
                 </div>
               </div>
             </div>
 
-            <SocialIcons />
           </div>
 
           {/* Form */}

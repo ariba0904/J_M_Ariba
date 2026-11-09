@@ -136,56 +136,11 @@ function Projects() {
             </motion.article>
           ))}
         </div>
-
-        <div
-          className="stats-grid"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gap: 12,
-            marginTop: 40,
-          }}
-        >
-          {[
-            { n: "6+", l: "Projects Completed" },
-            { n: "10+", l: "Technologies" },
-            { n: "2+", l: "Years Learning" },
-            { n: "100%", l: "Dedication" },
-          ].map((s) => (
-            <div
-              key={s.l}
-              className="card"
-              style={{ padding: "20px 16px", textAlign: "center" }}
-            >
-              <div
-                style={{
-                  fontSize: "1.6rem",
-                  fontWeight: 700,
-                  color: "var(--accent-bright)",
-                  lineHeight: 1,
-                }}
-              >
-                {s.n}
-              </div>
-              <div
-                style={{
-                  fontSize: 12,
-                  fontWeight: 600,
-                  color: "var(--text-muted)",
-                  marginTop: 6,
-                }}
-              >
-                {s.l}
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
 
       <style>{`
         @media (min-width: 640px) {
           .projects-grid { grid-template-columns: repeat(2, 1fr) !important; }
-          .stats-grid { grid-template-columns: repeat(4, 1fr) !important; }
         }
         @media (min-width: 900px) {
           .projects-grid { grid-template-columns: repeat(3, 1fr) !important; }

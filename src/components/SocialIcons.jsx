@@ -4,6 +4,7 @@ import {
   FaFacebook,
   FaInstagram,
   FaWhatsapp,
+  FaYoutube,
 } from "react-icons/fa";
 
 const socials = [
@@ -16,6 +17,11 @@ const socials = [
   { href: "https://www.facebook.com/jm.ariba.09", label: "Facebook", Icon: FaFacebook },
   { href: "https://www.instagram.com/j_m_ariba", label: "Instagram", Icon: FaInstagram },
   { href: "https://wa.me/8801856119274", label: "WhatsApp", Icon: FaWhatsapp },
+  {
+    href: "https://www.youtube.com/@Figuring.Forward_By_Ariba",
+    label: "YouTube",
+    Icon: FaYoutube,
+  },
 ];
 
 function SocialIcons({ size = 16 }) {

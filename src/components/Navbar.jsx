@@ -8,6 +8,8 @@ const links = [
   { id: "about", label: "About" },
   { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
+  { id: "coding-profiles", label: "Coding" },
+  { id: "content-creator", label: "Creator" },
   { id: "certificates", label: "Certificates" },
   { id: "contact", label: "Contact" },
 ];
@@ -60,17 +62,18 @@ function Navbar() {
           JM <span style={{ color: "var(--accent-bright)" }}>ARIBA</span>
         </a>
 
-        <nav className="hidden lg:flex" style={{ alignItems: "center", gap: "4px" }}>
+        <nav className="hidden lg:flex" style={{ alignItems: "center", gap: "2px", flexWrap: "nowrap" }}>
           {links.map((l) => (
             <a
               key={l.id}
               href={`#${l.id}`}
               style={{
-                padding: "6px 12px",
-                fontSize: "13px",
+                padding: "6px 8px",
+                fontSize: "12px",
                 fontWeight: 600,
                 color: "var(--text-muted)",
                 borderRadius: "8px",
+                whiteSpace: "nowrap",
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text)")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}

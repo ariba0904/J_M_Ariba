@@ -9,14 +9,17 @@ import {
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 import aboutImage from "../assets/images/about.png";
-
+import { FaVideo, FaCamera } from "react-icons/fa";
 const keywords = [
   { icon: FaGlobe, label: "Web Development" },
   { icon: FaChartBar, label: "Data Analysis" },
   { icon: FaRobot, label: "Robotics" },
   { icon: FaRocket, label: "Space & Astronomy" },
   { icon: FaStar, label: "Research Mindset" },
-  { icon: MdWork, label: "UI / UX Design" },
+  { icon: MdWork, label: "UI/UX Design" },
+  { icon: FaVideo, label: "Video Content Creation" },
+  { icon: FaCamera, label: "Photography" },
+
 ];
 
 function About() {

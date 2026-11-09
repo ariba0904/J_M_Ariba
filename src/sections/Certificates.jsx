@@ -41,7 +41,7 @@ function Certificates() {
           style={{
             display: "grid",
             gridTemplateColumns: "1fr",
-            gap: 14,
+            gap: 16,
           }}
         >
           {certificates.map((c, i) => (
@@ -66,12 +66,17 @@ function Certificates() {
               onMouseLeave={() => setActive(null)}
               onClick={() => setActive((prev) => (prev === i ? null : i))}
             >
-              {/* Same image treatment as Featured Projects */}
+              {/* Full certificate visible — contain, not cropped */}
               <div
+                className="cert-image-wrap"
                 style={{
-                  height: 130,
+                  height: 200,
                   overflow: "hidden",
                   background: "var(--bg)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "10px 12px",
                 }}
               >
                 <img
@@ -80,7 +85,9 @@ function Certificates() {
                   style={{
                     width: "100%",
                     height: "100%",
-                    objectFit: "cover",
+                    objectFit: "contain",
+                    objectPosition: "center",
+                    display: "block",
                   }}
                 />
               </div>
@@ -163,12 +170,14 @@ function Certificates() {
       <style>{`
         @media (min-width: 640px) {
           .cert-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .cert-image-wrap { height: 180px !important; }
         }
         @media (min-width: 900px) {
           .cert-grid { grid-template-columns: repeat(3, 1fr) !important; }
+          .cert-image-wrap { height: 170px !important; }
         }
-        @media (min-width: 1100px) {
-          .cert-grid { grid-template-columns: repeat(3, 1fr) !important; }
+        @media (max-width: 639px) {
+          .cert-image-wrap { height: 220px !important; }
         }
       `}</style>
     </section>

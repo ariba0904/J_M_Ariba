@@ -10,7 +10,7 @@ const projects = [
     title: "Cosmic Odyssey — 3D Solar System & Milky Way Explorer",
     image: cosmicOdyssey,
     description:
-      "An interactive space exploration experience featuring a 3D Solar System and overall Universe.",
+      "An interactive space exploration experience featuring a 3D Solar System, Milky Way view, Black-Hole view & Object simulation, ISS, voice narration, satellite mission simulator, Learning Hub, Mission Spacecraft.",
     tech: ["HTML5", "Tailwind CSS", "JavaScript", "Three.js", "Vite"],
     github: "https://github.com/ariba0904/Cosmic-Odyssey",
     live: "https://ariba0904.github.io/Cosmic-Odyssey/",

@@ -173,8 +173,8 @@ function Certificates() {
           .cert-image-wrap { height: 180px !important; }
         }
         @media (min-width: 900px) {
-          .cert-grid { grid-template-columns: repeat(3, 1fr) !important; }
-          .cert-image-wrap { height: 170px !important; }
+          .cert-grid { grid-template-columns: repeat(4, 1fr) !important; }
+          .cert-image-wrap { height: 150px !important; }
         }
         @media (max-width: 639px) {
           .cert-image-wrap { height: 220px !important; }
